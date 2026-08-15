@@ -1,0 +1,54 @@
+File permissions in Linux
+Project description
+As a security analyst, I use this project to determine whether the permissions match the authorisation that should be granted. If they do not match, I will modify the permissions to authorize the appropriate users and remove any unauthorised access. This helps me implement the principle of least access to protect files from unauthorized users
+Describe the permissions string
+Drwxrwxrwx
+D is for drectory
+The first rwx is for the user permissions
+The second rwx is the group permissions
+The third rwx is for other permissions
+r-read
+w-write
+x-execute
+
+Change file permissions
+This document displays the file structure of the /home/researcher2/projects directory
+and the permissions of the files and subdirectory it contains.
+In the /home/researcher2/projects directory, there are five files with the following
+names and permissions:
+● project_k.txt
+○ User = read, write,
+○ Group = read, write
+○ Other = read, write
+● project_m.txt
+○ User = read, write
+○ Group = read
+○ Other = none
+● project_r.txt
+○ User= read, write
+○ Group = read, write
+○ Other = read
+● project_t.txt
+○ User = read, write
+○ Group = read, write
+○ Other = read
+● .project_x.txt
+○ User = read, write
+○ Group = write
+○ Other = none
+
+There is also one subdirectory inside the projects directory named drafts. The permissions
+on drafts are:
+● User = read, write, execute
+● Group = execute
+● Other = none
+
+The organization does not allow others to have write access to any files. My task is to change the permissions
+chmod o-w project_k.txt
+
+Change file permissions on a hidden file
+chmod u-w,g-w,g+r .project_x.txt
+Change directory permissions
+chmod g-x drafts
+Summary.
+I have been able to use the chmod command to change user permissions. I have ensured others are not allowed to write any files, ensured only users and group can read hidden files and changed the directory so only researcher2 can execute the directory
